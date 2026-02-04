@@ -1,4 +1,4 @@
-package pojoModel;
+package pojomodel;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

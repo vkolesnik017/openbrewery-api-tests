@@ -1,4 +1,4 @@
-package pojoModel;
+package pojomodel;
 
 public class BreweryQuery {
     private String query;

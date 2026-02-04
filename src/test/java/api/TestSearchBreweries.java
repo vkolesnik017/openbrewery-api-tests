@@ -2,14 +2,12 @@ package api;
 
 
 import config.BaseTest;
-import groovy.util.logging.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import pojoModel.Brewery;
-import pojoModel.BreweryClient;
-import pojoModel.BreweryQuery;
+import pojomodel.Brewery;
+import pojomodel.BreweryClient;
+import pojomodel.BreweryQuery;
 
 import java.util.HashSet;
 import java.util.List;
@@ -19,11 +17,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @Slf4j
 public class TestSearchBreweries extends BaseTest {
-    private static final Logger log = LoggerFactory.getLogger(TestSearchBreweries.class);
-    private final String CHICAGO = "Chicago";
-    private final String INVALID_REQUEST = "invalidRequest";
+
+    private static final String CHICAGO = "Chicago";
+    private static final String INVALID_REQUEST = "invalidRequest";
 
     @Test
     @DisplayName("Verify valid breweries are returned for a city")
