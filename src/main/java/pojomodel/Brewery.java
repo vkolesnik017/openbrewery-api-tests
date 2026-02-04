@@ -1,14 +1,16 @@
 package pojomodel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Getter
 public class Brewery {
     private String id;
     private String name;
-    private String brewery_type;
     private String city;
     private String country;
+    @JsonProperty("brewery_type")
+    private String breweryType;
 }
