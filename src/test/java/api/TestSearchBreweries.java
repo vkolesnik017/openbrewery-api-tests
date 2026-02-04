@@ -15,7 +15,7 @@ import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 @Slf4j
@@ -41,7 +41,7 @@ public class TestSearchBreweries extends BaseTest {
         assertThat(firstBrewery.getId(), notNullValue());
         assertThat(firstBrewery.getName(), notNullValue());
         assertThat(firstBrewery.getCountry(), notNullValue());
-        assertEquals(CHICAGO, firstBrewery.getCity());
+        assertThat(firstBrewery.getCity()).isEqualTo(CHICAGO);
     }
 
     @Test
@@ -86,7 +86,7 @@ public class TestSearchBreweries extends BaseTest {
         String firstIdPage2 = breweriesPage2.get(0).getId();
 
         log.info("Check that the first brewery ID on page 1 differs from page 2");
-        assertNotEquals(firstIdPage1, firstIdPage2);
+        assertThat(firstIdPage1).isNotEqualTo(firstIdPage2);
 
     }
 
@@ -104,7 +104,9 @@ public class TestSearchBreweries extends BaseTest {
         log.info("Check that all brewery IDs are unique");
         breweries.forEach(brewery -> {
             boolean added = ids.add(brewery.getId());
-            assertTrue(added, "Duplicate ID found: " + brewery.getId());
+            assertThat(added)
+                    .as("Duplicate ID found: %s", brewery.getId())
+                    .isTrue();
         });
     }
 
