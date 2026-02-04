@@ -1,5 +1,8 @@
 package pojomodel;
 
+import lombok.Getter;
+
+@Getter
 public class BreweryQuery {
     private String query;
     private Integer page;
@@ -18,17 +21,5 @@ public class BreweryQuery {
         this.query = query;
         this.page = page;
         this.perPage = perPage;
-    }
-
-    public String getQuery() {
-        return query;
-    }
-
-    public Integer getPage() {
-        return page;
-    }
-
-    public Integer getPerPage() {
-        return perPage;
     }
 }
