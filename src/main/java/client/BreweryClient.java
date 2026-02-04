@@ -1,10 +1,12 @@
-package pojomodel;
+package client;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
+import pojomodel.Brewery;
+import pojomodel.BreweryQuery;
 
 import java.util.List;
 

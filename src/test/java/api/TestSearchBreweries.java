@@ -1,12 +1,12 @@
 package api;
 
 
-import config.BaseTest;
+import base.BaseTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pojomodel.Brewery;
-import pojomodel.BreweryClient;
+import client.BreweryClient;
 import pojomodel.BreweryQuery;
 
 import java.util.HashSet;
