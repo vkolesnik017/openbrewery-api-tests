@@ -1,8 +1,8 @@
 package pojomodel;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class BreweryQuery {
     private String query;
     private Integer page;
