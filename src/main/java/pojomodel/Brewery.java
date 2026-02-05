@@ -11,6 +11,7 @@ public class Brewery {
     private String name;
     private String city;
     private String country;
+
     @JsonProperty("brewery_type")
     private String breweryType;
 }
